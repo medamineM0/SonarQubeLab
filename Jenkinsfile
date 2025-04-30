@@ -7,9 +7,9 @@ pipeline {
     stage('Scan') {
       steps {
         script{
-          sh 'chmod +x ./mvnw'
+          sh 'chmod +x ./mvn'
           withSonarQubeEnv(installationName: 'Sq1'){
-          sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+          sh './mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
         }
         }
       }
