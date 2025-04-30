@@ -9,7 +9,7 @@ pipeline {
         script{
           
           withSonarQubeEnv(installationName: 'SQ1'){
-          bat './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+          bat 'mvnw.cmd clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
         }
         }
       }
