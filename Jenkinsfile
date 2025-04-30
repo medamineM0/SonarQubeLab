@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+        JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'  
+  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
@@ -7,7 +10,6 @@ pipeline {
     stage('Scan') {
       steps {
         script{
-          
           withSonarQubeEnv(installationName: 'SQ1'){
           bat 'mvnw.cmd clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
         }
