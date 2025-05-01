@@ -1,4 +1,5 @@
 # SonarQube Lab
+- <strong><i style="color:#B45555"> Moutaouakil Mohamed Amine </i></strong>
 
 ## Introduction
 SonarQube est une plateforme d’analyse de la qualité du code qui permet aux développeurs de détecter et corriger les problèmes de code tels que les bugs, les vulnérabilités, les mauvaises pratiques de codage et les problèmes de maintenabilité. SonarQube évalue plusieurs aspects du code source pour garantir qu'il est de haute qualité et sécurisé. Ce fichier explore brièvement trois concepts clés dans SonarQube : la qualité du logiciel, la sévérité des problèmes et les attributs du code propre.
