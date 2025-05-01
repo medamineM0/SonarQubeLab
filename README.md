@@ -3,58 +3,69 @@
 ## Introduction
 SonarQube est une plateforme d’analyse de la qualité du code qui permet aux développeurs de détecter et corriger les problèmes de code tels que les bugs, les vulnérabilités, les mauvaises pratiques de codage et les problèmes de maintenabilité. SonarQube évalue plusieurs aspects du code source pour garantir qu'il est de haute qualité et sécurisé. Ce fichier explore brièvement trois concepts clés dans SonarQube : la qualité du logiciel, la sévérité des problèmes et les attributs du code propre.
 
-## Software Quality (Qualité du Logiciel)
-La **qualité du logiciel** dans SonarQube est une mesure globale qui englobe plusieurs critères, tels que :
+## Mesures de la qualité du code dans SonarQube
 
-- **La fiabilité** : Mesure de la stabilité du code. Un code fiable doit être exempt de bogues qui pourraient compromettre son fonctionnement.
-- **La sécurité** : Détection des vulnérabilités qui pourraient être exploitées par des attaquants.
-- **La maintenabilité** : Mesure de la facilité avec laquelle le code peut être modifié ou étendu sans introduire de nouveaux bugs ou problèmes.
-- **La performance** : Bien que SonarQube ne se concentre pas directement sur la performance, des métriques liées à la performance (comme l'optimisation du code) peuvent être détectées dans le cadre des problèmes de maintenabilité.
+SonarQube mesure plusieurs critères pour évaluer la qualité du code d'une application. Voici une description brève des principaux filtres qu'il analyse :
 
-SonarQube aide à surveiller ces aspects à travers des métriques détaillées et des indicateurs visuels, permettant aux équipes de développement de maintenir une haute qualité de code tout au long du cycle de vie du projet.
-
-## Severity (Sévérité)
-La **sévérité** est une classification des problèmes détectés dans le code selon leur impact potentiel. SonarQube classe les problèmes en plusieurs niveaux de sévérité :
-
-1. **Blocker (Bloquant)** : Ce sont des problèmes graves qui empêchent le bon fonctionnement du logiciel ou qui présentent un risque de sécurité immédiat. Ils nécessitent une attention immédiate.
-2. **Critical (Critique)** : Ce sont des problèmes majeurs qui peuvent affecter la stabilité ou la sécurité du logiciel. Ils doivent être corrigés rapidement.
-3. **Major (Majeur)** : Problèmes importants, mais qui n'ont pas d'impact immédiat sur le fonctionnement du système. Ils doivent être résolus, mais peuvent être traités après les problèmes critiques.
-4. **Minor (Mineur)** : Problèmes qui n'affectent pas directement la fonctionnalité du logiciel, mais qui peuvent nuire à la lisibilité ou à la maintenabilité du code.
-5. **Info (Information)** : Ce sont des problèmes de moindre importance qui ne nécessitent généralement pas de correction immédiate mais peuvent améliorer la qualité globale du code.
-
-La gestion de la sévérité permet de prioriser les efforts de correction, en se concentrant sur les problèmes les plus graves avant de passer aux problèmes mineurs.
-
-## Clean Code Attributes (Attributs du Code Propre)
-Un **code propre** est essentiel pour la maintenabilité à long terme. SonarQube évalue plusieurs attributs pour déterminer la propreté du code :
-
-- **Lisibilité** : Le code doit être facilement compréhensible par les autres développeurs. Il doit suivre des conventions de nommage claires et avoir une structure logique.
-- **Simplicité** : Un code simple est plus facile à comprendre et à maintenir. Les solutions complexes et redondantes doivent être évitées.
-- **Modularité** : Le code doit être organisé en modules bien définis, chacun ayant une responsabilité claire et distincte.
-- **Absence de duplication** : La duplication de code est un signe de mauvais design et augmente la complexité du projet. Le code doit être réutilisé là où cela est possible.
-- **Tests** : Un code propre est accompagné de tests unitaires et d’intégration adéquats. SonarQube évalue également la couverture de tests pour garantir que le code fonctionne comme prévu.
-
-Les **attributs du code propre** sont évalués à l’aide de différentes métriques, telles que la complexité, la duplication et la couverture des tests, afin de s'assurer que le code reste lisible, compréhensible et facile à maintenir.
+- **Code Smells** : Ce sont des éléments du code qui peuvent fonctionner mais qui ne sont pas optimaux, comme des méthodes trop longues ou un manque de lisibilité.
+- **Bugs** : Des erreurs potentielles dans le code qui peuvent entraîner des comportements inattendus ou des crashs.
+- **Vulnérabilités** : Des failles de sécurité qui pourraient permettre des attaques ou des accès non autorisés au système.
+- **Duplication** : Mesure de la répétition de code dans l’application, ce qui peut entraîner des difficultés de maintenance.
+- **Test Coverage** : Le pourcentage de code testé par des tests unitaires, ce qui aide à évaluer la robustesse des tests.
+- **Complexité** : Analyse de la complexité du code, ce qui inclut des mesures comme la complexité cyclomatique (nombre de chemins possibles dans un programme).
 
 ## Visualisation des Résultats SonarQube
 
 #### Génération du token
-![Capture d'écran SonarQube - Rapport](screens\4.png)
+![Capture d'écran SonarQube - Rapport](screens/4.png)
 
 #### Création du token pour envoyer les résultats au serveur SonarQube.
-![Capture d'écran SonarQube - Rapport](screens\1.png)
+![Capture d'écran SonarQube - Rapport](screens/1.png)
 
 #### Ajout du token
-![Capture d'écran SonarQube - Rapport](screens\3.png)
+![Capture d'écran SonarQube - Rapport](screens/3.png)
 
 #### Pipeline modifiée
-![Capture d'écran SonarQube - Rapport](screens\5.png)
+![Capture d'écran SonarQube - Rapport](screens/5.png)
 
 #### Résultat du pipeline
-![Capture d'écran SonarQube - Rapport](screens\6.png)
+![Capture d'écran SonarQube - Rapport](screens/6.png)
 
 #### Analyse de Sonarqube
-![Capture d'écran SonarQube - Rapport](screens\7.png)
+![Capture d'écran SonarQube - Rapport](screens/7.png)
+![Capture d'écran SonarQube - Rapport](screens/9.png)
+
+#### Interprétation
+![Capture d'écran SonarQube - Rapport](screens/8.png)
+> **An empty method is generally considered bad practice and can lead to confusion, readability, and maintenance issues. Empty methods bring no functionality and are misleading to others as they might think the method implementation fulfills a specific and identified requirement.**
+
+Cette remarque signifie que :
+- Une **méthode vide** est vue comme une **mauvaise pratique**.
+- Elle **n'apporte aucune fonctionnalité** réelle.
+- Elle **peut induire en erreur** les autres développeurs : ils pourraient croire que la méthode a un rôle précis ou qu’elle est déjà fonctionnelle.
+- Cela nuit à la **lisibilité** du code et rend sa **maintenance plus difficile**.
+
+✅ Pour éviter ce problème, il est recommandé :
+- D’**ajouter un commentaire clair** si la méthode est vide intentionnellement,
+- Ou de **compléter son implémentation**,
+- Ou de **lancer une exception** pour signaler que la méthode n’est pas encore prête.
+
+<br><br>
+
+![Capture d'écran SonarQube - Rapport](screens/10.png)
+> **An HTTP method is safe when used to perform a read-only operation, such as retrieving information. In contrast, an unsafe HTTP method is used to change the state of an application, for instance to update a user’s profile on a web application.<br><br> Common safe HTTP methods are GET, HEAD, or OPTIONS.<br><br> Common unsafe HTTP methods are POST, PUT and DELETE. <br><br> Allowing both safe and unsafe HTTP methods to perform a specific operation on a web application could impact its security, for example CSRF protections are most of the time only protecting operations performed by unsafe HTTP methods.**
+
+Cela signifie que :
+- Une route accepte à la fois des méthodes HTTP sûres (comme GET) et non sûres (comme POST), ce qui peut entraîner une faille de sécurité.
+- Par exemple, la suppression d’un utilisateur est accessible via **GET**, ce qui est dangereux. En effet, un simple lien ou une requête automatique (ex: image piégée, redirection) pourrait exécuter cette action sans protection.
+
+✅ Bonne pratique recommandée :
+- Restreindre l’accès uniquement à la méthode **POST** (ou DELETE, selon le cas),
+- Protéger la route avec un **jeton CSRF**,
+- Ne jamais utiliser **GET** pour des opérations qui modifient les données.
+
+
 
 ## Conclusion
-SonarQube est un outil puissant pour évaluer la qualité du code et garantir que les logiciels développés respectent des normes de fiabilité, de sécurité et de maintenabilité. Grâce à des analyses détaillées des problèmes de code, des mesures de couverture et des vérifications de qualité, SonarQube aide les équipes à produire un code propre, sûr et performant. Utiliser SonarQube permet non seulement de corriger les erreurs avant qu'elles ne deviennent des problèmes majeurs, mais aussi de maintenir un niveau de qualité élevé tout au long du cycle de vie du projet.
+SonarQube est un outil puissant pour évaluer la qualité du code et garantir que les logiciels développés respectent des normes de fiabilité, de sécurité et de maintenabilité. Grâce à des analyses détaillées des problèmes de code, des mesures de couverture et des vérifications de qualité, SonarQube aide les équipes à produire un code propre, sûr et performant.
 
